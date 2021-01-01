@@ -14,4 +14,4 @@ Task - Fake email generation
 
 results showed that model built with LSTM, model was able to spell @gmail.com , @yahoo.com (long suffixes)... where as with RNN, model could create emails with suffix like @me.in
 
-There are also saved models for each model in .pth files.
+There are also saved models for each model in .pth files..
