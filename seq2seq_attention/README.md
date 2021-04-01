@@ -42,8 +42,9 @@ Below i am providing results of code . Here , BLEU score is used as metric over 
 *Validation loss*
 
 
-# Some results.
-Model obtains BLEU score of *30.2* that is quite appreciable
+**Some results.**
+
+**Model obtains BLEU score of *30.2*** that is quite appreciable
 These are pairs of actual and predicted sentences.
 ['two', 'white', 'men', 'are', 'outside', 'near', 'some', 'sort', 'of', 'canopy', '.']
 ['two', 'young', ',', 'white', 'males', 'are', 'outside', 'near', 'many', 'bushes', '.']
