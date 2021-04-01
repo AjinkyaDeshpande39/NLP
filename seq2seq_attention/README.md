@@ -1,7 +1,5 @@
 # NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE
-> https://arxiv.org/abs/1409.0473based  This paper proposes a the pioneering paradigm for nerual machine translation using a simple yet applaudable encoder-decoder RNN pair.
->  Although, being the poorest of performers in this list, it earns a spot due to its novely.
->   Note: A few changes have been made in order to improve performance
+> https://arxiv.org/abs/1409.0473based  This paper presents a remarkable improvement in the Sequence to Sequence architecture by introducing a (soft)alignment metric called >"attention". This metric induces a sense of similarity between tokens of the source and decoded sentences, which increases the BLEU score by almost 1.5 times and is much more >robust with regards to the length of source and target sentences.
 >   
 >CODE - Attention_contextInputToHidden_bidirectional.ipynb
 >
