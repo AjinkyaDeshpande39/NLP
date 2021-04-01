@@ -1,0 +1,34 @@
+english_vocab_size = len(english.vocab)
+german_vocab_size = len(german.vocab)
+embedding = 64
+output_size = english_vocab_size
+hidden_size = 256
+num_layers = 2
+batch_size = 128
+learning_rate = 0.01
+epochs = 4
+device='cuda'
+
+The model has 5,635,653 trainable parameters
+
+mean epoch loss : 2.269857400839549  ||  time : 32.954097032547
+mean epoch loss : 1.7136995556070942  ||  time : 32.633841037750244
+mean epoch loss : 1.264441644042599  ||  time : 32.51249647140503
+mean epoch loss : 0.9771454581080029  ||  time : 32.72857928276062
+mean epoch loss : 0.8299472872906319  ||  time : 32.75953674316406
+mean epoch loss : 0.7305053099661671  ||  time : 32.77890229225159
+
+
+sentence = 'ein mann lehnt sich in der nähe einer belebten straße an ein gebäude .'  # 'a man leans against a building near a busy street .'
+a man leans against a building near a busy street .
+
+sentence = 'eine frau mochte dieses gebäude .' # 'a woman liked that building'
+a woman is <unk> her building .
+
+sentence = 'ein läufer <unk> sich für ein rennen aus dem <unk> .'  #runner leaving the starting blocks of a race .
+a runner is getting ready for a race after a race .
+
+sentence = 'ich habe kein interesse am spielen .' # 'i dont have intrest in playing'
+i <unk> <unk> <unk> on the playing .
+
+This seems best result.

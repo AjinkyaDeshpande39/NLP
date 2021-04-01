@@ -1,0 +1,87 @@
+d_model = 512   # embedding dimension
+d_k = 64
+n_dk = 4
+in_vocab_size = len(german.vocab)
+out_vocab_size = len(english.vocab)
+batch_size = 128
+device = 'cuda' if torch.cuda.is_available else 'cpu'
+learning_rate = 0.0004
+epochs = 13
+
+
+
+# ...................................................................................................................................................................................................................................
+# epoch train loss : 2.0330910236299826  ||  time : 15.214810371398926  ||  epoch validation loss : 2.014664277434349
+# ...................................................................................................................................................................................................................................
+# epoch train loss : 1.1160743593644467  ||  time : 15.319031000137329  ||  epoch validation loss : 1.5752189457416534
+# ...................................................................................................................................................................................................................................
+# epoch train loss : 0.82381343473947  ||  time : 15.492727041244507  ||  epoch validation loss : 1.4209523051977158
+# ...................................................................................................................................................................................................................................
+# epoch train loss : 0.645236498458795  ||  time : 15.51793885231018  ||  epoch validation loss : 1.3809292763471603
+# ...................................................................................................................................................................................................................................
+# epoch train loss : 0.5199730066738465  ||  time : 15.513466835021973  ||  epoch validation loss : 1.386391267180442
+#separated model
+
+
+
+
+
+['a', 'man', 'in', 'an', 'orange', 'hat', ',', 'orange', 'and', 'white', '<unk>', '.']
+[['a', 'man', 'in', 'an', 'orange', 'hat', 'starring', 'at', 'something', '.']]
+
+['a', 'boston', '<unk>', 'terrier', 'runs', 'over', 'grass', 'in', 'front', 'of', 'a', 'white', 'fence', '.']
+[['a', 'boston', 'terrier', 'is', 'running', 'on', 'lush', 'green', 'grass', 'in', 'front', 'of', 'a', 'white', 'fence', '.']]
+
+['a', 'girl', 'in', 'a', 'karate', 'uniform', 'is', 'doing', 'a', 'trick', '.']
+[['a', 'girl', 'in', 'karate', 'uniform', 'breaking', 'a', 'stick', 'with', 'a', 'front', 'kick', '.']]
+
+['five', 'people', 'in', 'winter', 'jackets', 'with', 'helmets', 'standing', 'in', 'the', 'snow', 'with', 'helmets', 'in', 'the', 'background', '.']
+[['five', 'people', 'wearing', 'winter', 'jackets', 'and', 'helmets', 'stand', 'in', 'the', 'snow', ',', 'with', 'snowmobiles', 'in', 'the', 'background', '.']]
+
+['people', 'fixing', 'the', 'roof', 'of', 'a', 'house', '.']
+[['people', 'are', 'fixing', 'the', 'roof', 'of', 'a', 'house', '.']]
+
+['a', 'man', 'in', 'a', 'bright', 'yellow', 'and', 'a', 'group', 'of', 'men', 'in', 'a', 'dark', 'dress', 'are', 'standing', 'around', 'a', '<unk>', '.']
+[['a', 'man', 'in', 'light', 'colored', 'clothing', 'photographs', 'a', 'group', 'of', 'men', 'wearing', 'dark', 'suits', 'and', 'hats', 'standing', 'around', 'a', 'woman', 'dressed', 'in', 'a', 'strapless', 'gown', '.']]
+
+['a', 'group', 'of', 'people', 'standing', 'in', 'front', 'of', 'art', 'supplies', '.']
+[['a', 'group', 'of', 'people', 'standing', 'in', 'front', 'of', 'an', 'igloo', '.']]
+
+['a', 'boy', 'in', 'a', 'red', 'uniform', 'tries', 'to', 'catch', 'the', 'base', 'while', 'the', 'base', 'while', 'the', 'blue', 'uniform', 'is', 'trying', 'to', 'catch', 'him', '.']
+[['a', 'boy', 'in', 'a', 'red', 'uniform', 'is', 'attempting', 'to', 'avoid', 'getting', 'out', 'at', 'home', 'plate', ',', 'while', 'the', 'catcher', 'in', 'the', 'blue', 'uniform', 'is', 'attempting', 'to', 'catch', 'him', '.']]
+
+['a', 'guy', 'working', 'on', 'a', 'building', '.']
+[['a', 'guy', 'works', 'on', 'a', 'building', '.']]
+
+['a', 'man', 'in', 'a', 'vest', 'is', 'sitting', 'on', 'a', 'chair', 'holding', 'a', '<unk>', '.']
+[['a', 'man', 'in', 'a', 'vest', 'is', 'sitting', 'in', 'a', 'chair', 'and', 'holding', 'magazines', '.']]
+
+['a', 'mother', 'and', 'son', 'enjoying', 'a', 'beautiful', 'day', 'together', 'outside', '.']
+[['a', 'mother', 'and', 'her', 'young', 'song', 'enjoying', 'a', 'beautiful', 'day', 'outside', '.']]
+
+['men', ',', 'volleyball', ',', 'playing', 'volleyball', ',', 'a', 'man', ',', 'while', 'the', 'ball', ',', 'with', 'his', 'hands', ',', 'while', 'the', 'air', '.']
+[['men', 'playing', 'volleyball', ',', 'with', 'one', 'player', 'missing', 'the', 'ball', 'but', 'hands', 'still', 'in', 'the', 'air', '.']]
+
+['a', 'woman', 'holding', 'a', 'bowl', 'of', 'food', 'in', 'a', 'bowl', '.']
+[['a', 'woman', 'holding', 'a', 'bowl', 'of', 'food', 'in', 'a', 'kitchen', '.']]
+
+['a', 'man', 'sitting', 'at', 'a', 'table', 'in', 'his', 'sitting', 'at', 'a', 'house', 'with', 'his', 'computer', '.']
+[['man', 'sitting', 'using', 'tool', 'at', 'a', 'table', 'in', 'his', 'home', '.']]
+
+['three', 'people', 'are', 'sitting', 'in', 'a', 'cave', '.']
+[['three', 'people', 'sit', 'in', 'a', 'cave', '.']]
+
+['a', 'girl', 'in', 'a', '<unk>', 'walks', 'toward', 'an', 'elevated', 'on', 'balance', 'beam', '.']
+[['a', 'girl', 'in', 'a', 'jean', 'dress', 'is', 'walking', 'along', 'a', 'raised', 'balance', 'beam', '.']]
+
+['a', 'woman', 'is', 'holding', 'a', 'man', 'in', 'the', 'sand', '.']
+[['a', 'blond', 'holding', 'hands', 'with', 'a', 'guy', 'in', 'the', 'sand', '.']]
+
+['a', 'woman', 'in', 'a', 'gray', 'sweater', 'is', 'standing', 'in', 'a', 'black', 'baseball', 'cap', 'with', 'a', 'store', '.']
+[['a', 'woman', 'in', 'a', 'gray', 'sweater', 'and', 'black', 'baseball', 'cap', 'is', 'standing', 'in', 'line', 'at', 'a', 'shop', '.']]
+
+['the', 'person', 'in', 'the', 'striped', 'shirt', 'is', 'climbing', 'on', 'a', 'hill', '.']
+[['the', 'person', 'in', 'the', 'striped', 'shirt', 'is', 'mountain', 'climbing', '.']]
+
+['two', 'men', 'and', 'a', 'fishing', 'gear', 'with', 'statues', ',', 'while', 'people', 'watch', '.']
+[['two', 'men', 'pretend', 'to', 'be', 'statutes', 'while', 'women', 'look', 'on', '.']]
