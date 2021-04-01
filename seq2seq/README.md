@@ -3,6 +3,10 @@
  >https://arxiv.org/abs/1409.3215
  >This paper proposes a the pioneering paradigm for nerual machine translation using a simple yet applaudable encoder-decoder RNN pair. Although, being the poorest of performers in this list, it earns a spot due to its novely.
 Note: A few changes have been made in order to improve performance
+>
+>CODE - Translation(1) (1).ipynb
+>
+>SAVED MODEL - translate2_4.pth
 
 In this project , we built an NMT model based on seq2seq paper. Model consists of Encoder rnn and Decoder rnn. 
 
