@@ -21,6 +21,8 @@ Tanh gives better results over ReLU. Encoder basically encodes source sentence t
 Decoder takes encodings of source sentence. Decoder builds relation between source and target sentences.
 Decoder is consisting of just 2 layers of LSTM. If context vector ( from prrevious timestep) is provided , the it will be concatenated with current word vector and passed through linear layer to decrease the hidden dimension.
 
+![](https://github.com/AjinkyaDeshpande39/NLP/blob/master/seq2seq_attention/model.png)
+
 The part of attention is written in Transaltion class. Firstly source encodings and target encodings are obtained from Encoder and Decoder . 
 Then , context vector is calculated over here. For first timestep , a zero vector as context vector will be passed to decoder that will be ignored in deoced block and wont be concatenated. After that for nth timestep , context vector of n-1th timestep is passed.
 This enhances performance of model. Model lerns current word mapping based on previous hidden as well as previous context vector.
